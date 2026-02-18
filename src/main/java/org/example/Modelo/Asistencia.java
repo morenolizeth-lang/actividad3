@@ -2,9 +2,11 @@ package org.example.Modelo;
 
 public class Asistencia {
 
-    private Estudiante estudiante;
-     private String fecha;
-    private EstadoAsistencia estado;
+    // Crea objeto estudiante
+    private Estudiante estudiante;//Atributo que guarda un hobjeto de estudiante
+    private String fecha;
+    //crea objeto estado
+    private EstadoAsistencia estado; // usa el enum para mostrar el estado de la asistencia
 
     public Asistencia() {
     }

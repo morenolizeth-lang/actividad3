@@ -7,16 +7,16 @@ public class Estudiante {
    private String nombre;
    private  String identificacion;
 
-   //constructor por defecto
+   //constructor por defecto vacio para luego agregar datos
     public Estudiante() {
     }
 
-    //constructor con parametros
+    //constructor con parametros para crear objetos
     public Estudiante(String nombre, String identificacion) {
         this.nombre = nombre;
         this.identificacion = identificacion;
     }
-
+// getters y setters
     public String getNombre() {
         return nombre;
     }
@@ -35,10 +35,9 @@ public class Estudiante {
 
     @Override
     public String toString() {
-
-        return "Estudiante: " + nombre +
-                " | ID: " + identificacion;
-
+        return "Estudiante{" +
+                "nombre='" + nombre + '\'' +
+                ", identificacion='" + identificacion + '\'' +
+                '}';
     }
-
 }

@@ -7,7 +7,7 @@ import org.example.Modelo.Estudiante;
 public class AsistenciaServiceImpl implements AsistenciaService{
 
 
-    @Override
+    @Override //obligatorio verifica que este correcto
     public Estudiante registrarEstudiante(String nombre, String identificacion) {
         return new Estudiante(nombre, identificacion);
     }
