@@ -41,8 +41,13 @@ public class AsistenciaController {
             EstadoAsistencia estado){ // estado de la asistencia (ASISTIO, FALTO, etc.)
 
         // Llama al servicio para crear un nuevo objeto Asistencia con los datos proporcionados
-        Asistencia asistencia =
-                service.registrarAsistencia(estudiante, fecha, estado);
+        Asistencia asistencia = service.registrarAsistencia(estudiante, fecha, estado);
+
+        if(asistencia == null){
+            view.mostrarMensaje("ya está registrado");
+            return null;
+
+        }
 
         // Muestra la asistencia creada en consola usando la vista
         view.mostrarAsistencia(asistencia);
@@ -50,5 +55,29 @@ public class AsistenciaController {
         // Devuelve el objeto Asistencia creado
         return asistencia;
     }
+    public void consultarAsistencia(String identificacion, String fecha){
 
+        Asistencia asistencia = service.consultarAsistencia(identificacion, fecha);
+
+        if(asistencia != null){
+            view.mostrarAsistencia(asistencia);
+        }
+        else{
+            view.mostrarMensaje("Asistencia no encontrada");
+        }
+    }
+
+    public void eliminarAsistencia(String identificacion, String fecha) {
+
+        boolean eliminado = service.eliminarAsistencia(identificacion, fecha);
+
+        if (eliminado) {
+            view.mostrarMensaje("Registro eliminado");
+        } else {
+            view.mostrarMensaje("Registro no encontrado");
+        }
+    }
 }
+
+
+
